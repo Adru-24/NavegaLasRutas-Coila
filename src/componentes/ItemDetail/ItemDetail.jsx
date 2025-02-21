@@ -1,18 +1,38 @@
-import React from 'react'
+import { useState } from 'react';
 import './ItemDetail.css'
+import { Link } from 'react-router-dom';
+import Contador from '../Contador/Contador';
 
-const ItemDetail = ({id, nombre, precio, img}) => {
+import { CarritoContext } from '../../context/CarritoContext';
+import { useContext } from 'react';
+
+const ItemDetail = ({ id, nombre, stock, precio, img , descripcion }) => {
+    
+    const {agregarAlCarrito} = useContext(CarritoContext)
+
+    const [agregarCantidad, setAgregarCantidad] = useState(0);
   
-    return (
+    const manejadorCantidad = (cantidad) => {
+        setAgregarCantidad(cantidad);
 
+        const item = {id, nombre, precio}
+        agregarAlCarrito(item, cantidad)
+    }
+
+    return (
         <div className='contenedorItem'>
-            <h2>Nombre: {nombre}</h2>
-            <h3>Precio: {precio}</h3>
-            <h3>ID: {id}</h3>
+            <h2>Nombre: {nombre} </h2>
+            <h3>Precio: {precio} </h3>
+            <h3>ID: {id} </h3>
             <img src={img} alt={nombre} />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste neque sapiente placeat corporis dolores? Ex fuga, repellendus alias molestiae voluptates iusto, quos consequatur earum provident, dolorem saepe excepturi expedita praesentium.</p>
+            <p>{descripcion}</p>
+
+            {
+            agregarCantidad > 0 ? (<Link to="/cart"> Terminar Compra </Link>) : (<Contador inicial={1} stock={stock} functionAgregar={manejadorCantidad} />)
+            }
+
         </div>
-  )
+    )
 }
 
 export default ItemDetail

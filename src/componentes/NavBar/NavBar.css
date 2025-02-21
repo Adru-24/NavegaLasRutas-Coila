@@ -3,7 +3,25 @@ header{
     align-items: center;
     justify-content: space-between;
     border-bottom:1px solid #ceeca5;
+    background-color: #425E29;
+    padding: 8px 24px;
 }
+
+.enlaces a {  
+    text-decoration: none;
+    color: #ffffff;  
+    transition: color 0.3s;
+}
+
+.enlaces a:hover {  
+    color: #eed2d2;
+}  
+
+.enlaces a.active {  
+    color: #eed2d2;
+    border-bottom: 2px solid #eed2d2;
+    font-weight: bold;
+}  
 
 li{
     display: inline-block;
@@ -11,7 +29,11 @@ li{
     color: #495057;
 }
 
-h2{
+p{
     color: #5c940d;
     font-size: 1,5rem;
+}
+
+.logotienda{
+    width: 70%;
 }

@@ -1,3 +1,4 @@
-.imgCarrito{
-    width: 25px;;
+.carrito {
+    width: 1.5rem;
+    filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(98%) contrast(104%);
 }

@@ -1,26 +1,34 @@
-import React, { useEffect, useState } from "react"
-import {getProductos} from "../../asyncmock"
-import ItemList from "../ItemList/ItemList"
+import { useState, useEffect } from "react";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import { db } from "../../services/config";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import './ItemListContainer.css';
 
+const ItemListContainer = () => {
+    const[productos, setProductos] = useState([]);
 
-const ItemListContainer = ({}) => {
+    const {idCategoria} = useParams();
 
-    const[productos, setProductos] = useState([])
-
-    useEffect(()=>{
-        getProductos()
-            .then(respuesta => setProductos(respuesta))
+    useEffect(() => {
+        const misProductos = idCategoria ? query(collection(db, "productos"), where ("idCat", "==", idCategoria)) : collection(db, "productos");
+        
+        getDocs(misProductos)
+            .then(res => {
+                const nuevosProductos = res.docs.map(doc => {
+                    const data= doc.data()
+                    return {id: doc.id, ...data}
+                })
+                setProductos(nuevosProductos)
+            })
             .catch(error => console.log(error))
-            
-    },[])
+
+    }, [idCategoria])
 
     return (
-        <div>
-
-            <h2>mis productos</h2>
-            <p>Las plantas mas lindas paara decorar tu hogar</p>
-            <ItemList productos={productos}/>
-
+        <div className="ilc_container" >
+            <h2>Las plantas mas lindas para decorar tu hogar</h2>
+            <ItemList productos={productos} />
         </div>
     )
 }

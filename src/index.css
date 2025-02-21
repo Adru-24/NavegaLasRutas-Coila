@@ -1,4 +1,18 @@
+:root{
+  --color-acento: #425E29;
+  --color-acento-claro: #78944F;
+  --color-acento-i: #E18F8F;
+  --color-texto: #FCFCFA;
+  --color-texto-1: #404145; 
+  --color-texto-2: #74767E; 
+  --color-texto-t:#E7D9DA;
+}
+
 body{
-  margin-top: 0px;
-  background-color: #f4fce3
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  height: 100vh;
+  background-color:#f4fce3;
 }

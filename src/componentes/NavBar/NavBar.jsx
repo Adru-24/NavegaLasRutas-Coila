@@ -1,55 +1,29 @@
-import React from 'react'
- 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; 
-import './NavBar.css'
-import CartWidget from '../CartWidget/CartWidget'
-import Exterior from '../Exterior/Exterior'
-import Interior from '../Interior/Interior'
+import './NavBar.css';
+import CartWidget from '../CartWidget/CartWidget';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    
-    // return (
-    //     <header>
-    //     <h2>PLANTIN</h2>
-
-    //     <nav>
-    //         <ul>
-    //             <li>li</li>
-    //             <li>exterior</li>
-    //             <li>materiales</li>
-    //         </ul>
-    //     </nav>
-
-    //         <CartWidget/>
-
-    // </header>
-    // )
     return (
-        <Router>
-            <header>
-            <h2>PLANTIN</h2>
-
+        <header>
+            <Link to="/">
+                 <img className= 'logotienda' src="../img/logo.png" alt="logo Plantin" />
+            </Link>
             <nav>
-                <ul>
+                <ul className='enlaces'>
                     <li>
-                        <Link to="/">Interior</Link>
+                        <NavLink to="categoria/interior">Interior</NavLink>
                     </li>
                     <li>
-                        <Link to="/Exterior">exterior</Link>
+                        <NavLink to="categoria/exterior">Exterior</NavLink>
                     </li>
-                    <li>materiales</li>
+                    <li>
+                        <NavLink to="categoria/accesorios">Accesorios</NavLink>
+                    </li>
                 </ul>
             </nav>
 
             <CartWidget/>
-            
-            <Routes>
-                <Route path="/" element={<Interior />} />
-                <Route path="/Exterior" element={<Exterior />} />
-            </Routes>
-
-            </header>
-        </Router>
-    );
+        </header>
+    )
 }
 export default NavBar

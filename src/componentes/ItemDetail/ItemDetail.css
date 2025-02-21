@@ -1,10 +1,17 @@
 .contenedorItem{
     text-align: center;
-    margin: 5rem;
+    margin: 1rem;
     padding: 2rem;
     background-color: rgb(255, 255, 255);
 }
 
 img{
-    width: 35vw;
+    width: 20vw;
+}
+h3{
+    font-size: 1.2rem ;
+    color: #425E29
+}
+p{
+    color: #404145;
 }

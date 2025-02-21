@@ -1,8 +1,14 @@
-# React + Vite
+#Tienda PLANTIN
+Es una tiwnda Ecommerce básica creada para practicar ReactJS .
+##Tecnologias utilizas:
+- React
+- Vite
+- React-Ruter-DOM
+- Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Funcionalidad:
+- Ver una lista de productos disponibles, segun stok.
+- Realizar una orden de compra.
+- Agregar al carrito de compras.
+- Ver el carrito de compras.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

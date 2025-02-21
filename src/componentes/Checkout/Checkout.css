@@ -1,0 +1,43 @@
+.checkout-container {  
+    background-color: #e7d9da; /* Color de fondo */   
+    margin: 20px; /* Márgenes externos */  
+    border-radius: 8px; /* Bordes redondeados */  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */  
+}
+
+form{
+    padding-left:25px;
+}
+
+h2 {  
+    color: #404145;
+    font-size: 2rem;  
+    padding-left:25px;
+}  
+
+.checkout-container p {  
+    font-size: 1rem;
+    color: #74767E;
+    margin: 10px 0;
+}  
+
+.error-msg {  
+    color: rgb(133, 9, 9);
+    font-weight: bold;
+}  
+
+button {
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #78944F;
+    color:#E7D9DA; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {  
+    background-color: #425E29;
+}
